@@ -5,17 +5,10 @@
 # Modified:  2021-07-27
 
 ## Make sure we have a clean environment:
-  rm(list = ls())
+rm(list = ls())
 
-  # Functions
-  all_funs <- paste0("./functions/",
-                     list.files("./functions/"))
-  lapply(all_funs, source)
-
-  # Helper
-  all_help <- paste0("./helper/",
-                     list.files("./helper/"))
-  lapply(all_help, source)
+## Initialize the environment:
+source("./init.R")
 
 # Load Results ----------------------------------------------------------
 

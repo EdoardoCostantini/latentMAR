@@ -12,6 +12,8 @@
                  "rlecuyer",
                  "forcats",
                  "stringr",
+                 "ggplot2",
+                 "dplyr",
                  "mice")
 
   lapply(pack_list, library, character.only = TRUE, verbose = FALSE)
