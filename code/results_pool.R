@@ -21,7 +21,7 @@ source("./init.R")
 # list of conditions containing results for every repetition
 
   out <- do.call(rbind, output$out)
-  gg_shape <- reshape2::melt(out, id.var = colnames(out)[1:6])
+  gg_shape <- reshape2::melt(out, id.var = colnames(out)[1:7])
 
   # # Save
   # saveRDS(gg_shape,

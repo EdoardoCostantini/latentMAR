@@ -48,7 +48,7 @@
 
   # Data generation
   parms$N <- 1e3 # sample size
-  parms$L <- 2 # number of latent variables
+  parms$L <- 5 # number of latent variables
   parms$J <- 4 # number of measured items for latent variable
   parms$P <- parms$L*parms$J # number of latent variables
   parms$pm <- .3 # proportion of missings level
@@ -89,11 +89,13 @@
 # Experimental Conditions -------------------------------------------------
 
   mar_pred <- c("LV", "IT")
+  n_mar_pred <- c(1, 2, 3, 4)
   lambda <- seq(.3, .9, .1)
   method <- c("OG", "MI")
 
   # Make Conditionsa
   conds <- expand.grid(mar_pred = mar_pred,
+                       n_mar_pred = n_mar_pred,
                        lambda = lambda,
                        method = method,
                        stringsAsFactors = FALSE)

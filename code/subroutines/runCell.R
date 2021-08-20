@@ -18,10 +18,12 @@ runCell <- function(rp, cond, parms, fs) {
 
   ## Define mar predictors based on condition
   if(cond$mar_pred == "LV"){
-    preds <- dat_list$dat_lv[, parms$vmap_lv$mp, drop = FALSE]
+    pred_index <- seq_along(dat_list$dat_lv)[-parms$vmap_lv$ta][1:cond$n_mar_pred]
+    preds <- dat_list$dat_lv[, pred_index, drop = FALSE]
   }
   if(cond$mar_pred == "IT"){
-    preds <- dat_list$dat_ob[, parms$vmap_it$mp, drop = FALSE]
+    pred_index <- seq_along(dat_list$dat_ob)[-parms$vmap_it$ta][1:cond$n_mar_pred]
+    preds <- dat_list$dat_ob[, pred_index, drop = FALSE]
   }
 
   ## Impose Missingness according to condition
