@@ -13,7 +13,7 @@ source("./init.R")
 # Load Results ----------------------------------------------------------
 
   inDir <- "../output/"
-  files <- list.files(inDir)
+  files <- grep("tar", list.files(inDir), value = TRUE)
   target_tar <- files[length(files)]
   output <- readTarGz(target_tar)
 
@@ -23,10 +23,10 @@ source("./init.R")
   out <- do.call(rbind, output$out)
   gg_shape <- reshape2::melt(out, id.var = colnames(out)[1:7])
 
-  # # Save
-  # saveRDS(gg_shape,
-  #         file = paste0("../output/",
-  #                       output$name_run,
-  #                       "_res",
-  #                       ".rds")
-  # )
+  # Save
+  saveRDS(gg_shape,
+          file = paste0("../output/",
+                        output$name_run,
+                        "_res",
+                        ".rds")
+  )
