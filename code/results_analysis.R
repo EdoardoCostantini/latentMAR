@@ -2,7 +2,9 @@
 # Objective: Script to plot the results of the simulation
 # Author:    Edoardo Costantini
 # Created:   2021-07-27
-# Modified:  2021-07-27
+# Modified:  2021-08-25
+
+rm(list = ls())
 
 # Support Functions -------------------------------------------------------
 
@@ -11,10 +13,10 @@
 # Load Results ------------------------------------------------------------
 
   inDir <- "../output/"
-  runName <- "20210820_123036"
+  runName <- "20210823_114406_res"
 
   # Read output
-  gg_shape <- readRDS(paste0(inDir, runName, "_res.rds"))
+  gg_shape <- readRDS(paste0(inDir, runName, ".rds"))
 
 # number of predictors fixed ----------------------------------------------
 
